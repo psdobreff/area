@@ -1,4 +1,6 @@
 # Build outputs
 *.o
+*.d
 *.mod
-/area
+/cpp/area
+/fortran/area

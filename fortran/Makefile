@@ -16,7 +16,7 @@ shapes_mod.o:  shape_base_mod.o $(SHAPES)
 area.o:        shapes_mod.o
 
 run: area
-	./area shape.in
+	./area ../shape.in
 
 clean:
 	rm -f *.o *.mod area
