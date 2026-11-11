@@ -7,3 +7,7 @@ cmake -S cpp -B build-cpp && cmake --build build-cpp --target run
 
 # Fortran only
 cmake -S fortran -B build-fortran && cmake --build build-fortran --target run
+
+# Compilers default to Homebrew's g++-16 / gfortran-16 (cmake/brew-gcc16.cmake).
+# Override with e.g. -DCMAKE_CXX_COMPILER=g++ -DCMAKE_Fortran_COMPILER=gfortran
+# Existing build dirs keep their old compiler; reconfigure with --fresh.

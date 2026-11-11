@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
+include(${CMAKE_CURRENT_LIST_DIR}/../cmake/brew-gcc16.cmake)
 project(area_cpp LANGUAGES CXX)
 
 if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)

@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
+include(${CMAKE_CURRENT_LIST_DIR}/cmake/brew-gcc16.cmake)
 project(area LANGUAGES NONE)
 
 # Build whichever languages have a working compiler. Each subdirectory can
