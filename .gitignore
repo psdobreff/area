@@ -1,4 +1,6 @@
 # Build outputs
+/build/
+/build-*/
 *.o
 *.d
 *.mod

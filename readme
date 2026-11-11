@@ -1,0 +1,9 @@
+Usage:
+# Both (or whichever compilers are installed)
+cmake -S . -B build && cmake --build build --target run
+
+# C++ only
+cmake -S cpp -B build-cpp && cmake --build build-cpp --target run
+
+# Fortran only
+cmake -S fortran -B build-fortran && cmake --build build-fortran --target run
