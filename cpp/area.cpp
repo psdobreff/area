@@ -4,6 +4,7 @@
 //
 // Input file format - one shape per line, followed by its dimensions:
 //     rectangle       <width> <height>
+//     square          <side>
 //     circle          <radius>
 //     right_triangle  <base> <height>
 // Dimensions may be separated by spaces, tabs or commas.

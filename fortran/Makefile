@@ -1,7 +1,7 @@
 FC      = gfortran
 FFLAGS ?= -std=f2018 -Wall -Wextra -O2
 
-SHAPES = rectangle_mod.o circle_mod.o right_triangle_mod.o
+SHAPES = rectangle_mod.o square_mod.o circle_mod.o right_triangle_mod.o
 OBJS   = shape_base_mod.o $(SHAPES) shapes_mod.o area.o
 
 area: $(OBJS)

@@ -1,7 +1,7 @@
 CXX       = g++
 CXXFLAGS ?= -std=c++17 -Wall -Wextra -O2
 
-SRCS = shape.cpp rectangle.cpp circle.cpp right_triangle.cpp shapes.cpp area.cpp
+SRCS = shape.cpp rectangle.cpp square.cpp circle.cpp right_triangle.cpp shapes.cpp area.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 area: $(OBJS)

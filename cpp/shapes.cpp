@@ -34,6 +34,10 @@ std::unique_ptr<Shape> create_shape(const std::string& name,
         if (!need(2)) return nullptr;
         return std::make_unique<Rectangle>(dims[0], dims[1]);
     }
+    if (key == "square") {
+        if (!need(1)) return nullptr;
+        return std::make_unique<Square>(dims[0]);
+    }
     if (key == "circle") {
         if (!need(1)) return nullptr;
         return std::make_unique<Circle>(dims[0]);
@@ -43,6 +47,6 @@ std::unique_ptr<Shape> create_shape(const std::string& name,
         return std::make_unique<RightTriangle>(dims[0], dims[1]);
     }
 
-    errmsg = "unknown shape \"" + name + "\" (valid: rectangle, circle, right_triangle)";
+    errmsg = "unknown shape \"" + name + "\" (valid: rectangle, square, circle, right_triangle)";
     return nullptr;
 }

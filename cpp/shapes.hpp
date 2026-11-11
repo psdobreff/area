@@ -5,6 +5,7 @@
 #include "rectangle.hpp"
 #include "right_triangle.hpp"
 #include "shape.hpp"
+#include "square.hpp"
 
 #include <memory>
 #include <string>

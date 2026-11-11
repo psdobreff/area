@@ -6,12 +6,13 @@
 module shapes_mod
    use shape_base_mod,     only: dp, shape_t
    use rectangle_mod,      only: rectangle_t
+   use square_mod,         only: square_t
    use circle_mod,         only: circle_t
    use right_triangle_mod, only: right_triangle_t
    implicit none
    private
 
-   public :: dp, shape_t, rectangle_t, circle_t, right_triangle_t, create_shape
+   public :: dp, shape_t, rectangle_t, square_t, circle_t, right_triangle_t, create_shape
 
 contains
 
@@ -36,6 +37,9 @@ contains
       case ('rectangle')
          if (.not. need(2)) return
          shp = rectangle_t(width=dims(1), height=dims(2))
+      case ('square')
+         if (.not. need(1)) return
+         shp = square_t(side=dims(1))
       case ('circle')
          if (.not. need(1)) return
          shp = circle_t(radius=dims(1))
@@ -44,7 +48,7 @@ contains
          shp = right_triangle_t(base=dims(1), height=dims(2))
       case default
          errmsg = 'unknown shape "' // trim(name) // &
-                  '" (valid: rectangle, circle, right_triangle)'
+                  '" (valid: rectangle, square, circle, right_triangle)'
       end select
 
    contains
