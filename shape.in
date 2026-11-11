@@ -1,0 +1,7 @@
+# Shape definitions: <shape> <dimensions...>
+#   rectangle       width height
+#   circle          radius
+#   right_triangle  base height
+rectangle       3.0  4.0
+circle          2.5
+right_triangle  3.0  4.0
