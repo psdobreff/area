@@ -4,11 +4,10 @@
 !> types (one per file) extend it and provide their own `area` and
 !> `describe` procedures.
 module shape_base_mod
-   use, intrinsic :: iso_fortran_env, only: dp => real64
    implicit none
    private
 
-   public :: dp, shape_t, fmt
+   public :: shape_t, fmt
 
    type, abstract :: shape_t
    contains
@@ -18,9 +17,9 @@ module shape_base_mod
 
    abstract interface
       pure function area_iface(this) result(a)
-         import :: shape_t, dp
+         import :: shape_t
          class(shape_t), intent(in) :: this
-         real(dp) :: a
+         real :: a
       end function area_iface
 
       function describe_iface(this) result(s)
@@ -34,7 +33,7 @@ contains
 
    !> Format a real compactly for use in shape descriptions.
    function fmt(x) result(s)
-      real(dp), intent(in) :: x
+      real, intent(in) :: x
       character(len=:), allocatable :: s
       character(len=32) :: buf
       write (buf, '(g0.6)') x

@@ -1,14 +1,14 @@
 !> Rectangle shape.
 module rectangle_mod
-   use shape_base_mod, only: dp, shape_t, fmt
+   use shape_base_mod, only: shape_t, fmt
    implicit none
    private
 
    public :: rectangle_t
 
    type, extends(shape_t) :: rectangle_t
-      real(dp) :: width  = 0.0_dp
-      real(dp) :: height = 0.0_dp
+      real :: width  = 0.0
+      real :: height = 0.0
    contains
       procedure :: area     => rectangle_area
       procedure :: describe => rectangle_describe
@@ -18,7 +18,7 @@ contains
 
    pure function rectangle_area(this) result(a)
       class(rectangle_t), intent(in) :: this
-      real(dp) :: a
+      real :: a
       a = this%width * this%height
    end function rectangle_area
 

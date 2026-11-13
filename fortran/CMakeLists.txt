@@ -27,7 +27,8 @@ set_target_properties(area_fortran PROPERTIES
   OUTPUT_NAME area
   Fortran_MODULE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/mod
 )
-target_compile_options(area_fortran PRIVATE -std=f2018 -Wall -Wextra)
+target_compile_options(area_fortran PRIVATE -std=f2018 -Wall -Wextra
+  -fdefault-real-8 -fdefault-integer-8)
 
 add_custom_target(run_fortran
   COMMAND area_fortran ${SHAPE_INPUT}

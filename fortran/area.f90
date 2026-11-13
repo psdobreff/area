@@ -9,7 +9,7 @@
 !>     right_triangle  <base> <height>
 !> Blank lines and lines beginning with '#' or '!' are ignored.
 program area
-   use shapes_mod, only: dp, shape_t, create_shape
+   use shapes_mod, only: shape_t, create_shape
    implicit none
 
    integer, parameter :: max_line = 512, max_dims = 8
@@ -17,7 +17,7 @@ program area
    character(len=:), allocatable :: filename, errmsg
    character(len=max_line) :: line, name
    class(shape_t), allocatable :: shp
-   real(dp) :: dims(max_dims)
+   real :: dims(max_dims)
    integer :: unit, ios, line_no, ndims, nerr, nok, arglen
 
    ! ---- Determine input file name ------------------------------------------
@@ -78,7 +78,7 @@ contains
    subroutine parse_line(line, name, dims, ndims, ios)
       character(len=*), intent(in)  :: line
       character(len=*), intent(out) :: name
-      real(dp),         intent(out) :: dims(:)
+      real,             intent(out) :: dims(:)
       integer,          intent(out) :: ndims, ios
       character(len=len(line)) :: rest
       integer :: k

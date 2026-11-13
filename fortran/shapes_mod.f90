@@ -4,7 +4,7 @@
 !> own file), and provides `create_shape`, which builds the right concrete
 !> type from a name and a list of dimensions.
 module shapes_mod
-   use shape_base_mod,     only: dp, shape_t
+   use shape_base_mod,     only: shape_t
    use rectangle_mod,      only: rectangle_t
    use square_mod,         only: square_t
    use circle_mod,         only: circle_t
@@ -12,7 +12,7 @@ module shapes_mod
    implicit none
    private
 
-   public :: dp, shape_t, rectangle_t, square_t, circle_t, right_triangle_t, create_shape
+   public :: shape_t, rectangle_t, square_t, circle_t, right_triangle_t, create_shape
 
 contains
 
@@ -22,13 +22,13 @@ contains
    !--------------------------------------------------------------------------
    subroutine create_shape(name, dims, shp, errmsg)
       character(len=*),              intent(in)  :: name
-      real(dp),                      intent(in)  :: dims(:)
+      real,                          intent(in)  :: dims(:)
       class(shape_t), allocatable,   intent(out) :: shp
       character(len=:), allocatable, intent(out) :: errmsg
 
       errmsg = ''
 
-      if (any(dims <= 0.0_dp)) then
+      if (any(dims <= 0.0)) then
          errmsg = 'all dimensions must be positive'
          return
       end if
